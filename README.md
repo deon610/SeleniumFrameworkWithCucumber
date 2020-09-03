@@ -1,8 +1,9 @@
-# SeleniumFrameworkWithCucumber
-Automation on https://www.saucedemo.com/
-Descriptionsaucedemo
+# Automation on saucedemo.com
+
+### Description
 This is an Automation project for the application saucedemo
-Requirements of the project: Java, Selenium WebDriver, Cucumber, Maven
+
+### Requirements of the project: Java, Selenium WebDriver, Cucumber, Maven
 -->This project is developed by using Maven build management tool to follow a uniform template.
 
 -->The project is based on the Behavior-Driven Development(BDD) and utilizes Cucumber.
@@ -11,4 +12,4 @@ Requirements of the project: Java, Selenium WebDriver, Cucumber, Maven
 
 -->All the common input is written in separate file and driven into test script to reduce redudant code.
 
--->Every element of the web page is written in separate file by using page object fashion and driven into the test script to have a better readability of the code.
+-->Every element of the web page is written in separate file by using page object model and driven into the test script to have a better readability of the code.
