@@ -1,10 +1,13 @@
 package stepdefinition;
 
+import java.util.Random;
+
 import org.openqa.selenium.WebDriver;
 
 import com.qa.base.BaseTest;
 import com.qa.pages.HomePage;
 import com.qa.pages.LoginPage;
+import com.qa.utility.PropertyUtility;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -20,16 +23,16 @@ public class SauceDemoLoginStep extends BaseTest {
 	}
 	
 	LoginPage lp = new LoginPage();
-	 HomePage hp = new HomePage();
+	HomePage hp = new HomePage();
 	
 	@Given("^User has navigated to application$")
 	public void user_has_navigated_to_application() {
-	   driver.get(url);
+	   driver.get(PropertyUtility.getProperty("url"));
 	}
 
 	@When("^Login to the application$")
 	public void enter_the_correct_username_and_password(){  
-	   lp.login(user, pass);
+	   lp.login(PropertyUtility.getProperty("username"),PropertyUtility.getProperty("password"));
 	}
 
 	@Then("^Verify the title is '(.*)'$")
@@ -50,8 +53,9 @@ public class SauceDemoLoginStep extends BaseTest {
 	@When("^Login to the application with wrong credentials$")
 	public void loginToTheApplicationWithWrongCredentials()
 	{
-		String username = "user"+ (int)(Math.random() * (6000 - 50 + 1) +50);
-		String password = "password"+ (int)(Math.random() * (6000 - 50 + 1) +50);
+		Random random = new Random();
+		String username = "user"+ random.nextInt();
+		String password = "password"+  random.nextInt();
 		lp.login(username, password);
 	}
 

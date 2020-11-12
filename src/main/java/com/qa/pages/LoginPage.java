@@ -24,7 +24,7 @@ public class LoginPage extends BaseTest
 	@FindBy(xpath = "//form//h3")
 	WebElement loginError;
 	
-	public WebDriverWait wait;
+	private WebDriverWait wait;
 	
 	// Initializing the Page Objects:
 	public LoginPage() {
