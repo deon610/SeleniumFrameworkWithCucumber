@@ -1,6 +1,5 @@
 package com.qa.pages;
 
-import static org.junit.Assert.assertEquals;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -34,8 +33,8 @@ public class HomePage extends BaseTest
 		addToCartBtn.click();
 	}
 	
-	public void verifyTitle(String title) {
-		assertEquals(title,  driver.getTitle());
+	public String verifyTitle(String title) {
+		return driver.getTitle();
 	}
 	
 	public void logout() {

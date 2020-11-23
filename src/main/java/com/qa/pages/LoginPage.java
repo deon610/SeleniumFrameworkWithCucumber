@@ -1,7 +1,5 @@
 package com.qa.pages;
 
-import static org.junit.Assert.assertTrue;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -40,8 +38,8 @@ public class LoginPage extends BaseTest
 		loginBtn.click();
 	}
 	
-	public void verifyUserCantLogin() {
-		assertTrue(loginError.getText().contains("Username and password do not match any user in this service"));
+	public String loginErrorMessage() {
+		return loginError.getText();
 	}
 	
 }
